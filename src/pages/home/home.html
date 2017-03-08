@@ -1,0 +1,20 @@
+<ion-navbar>
+  <ion-title>
+    Project Structures
+  </ion-title>
+</ion-navbar>
+
+<ion-card>
+  <ion-list>
+    <ion-item id = "item" *ngFor = "let item of projects; let i = index">
+      <button ion-button #button id = "button" (click) = "clickButton(button, i)" outline item-left>{{item.name}}</button>
+      <label id = "label" [hidden] = "clicked" item-center>{{item.startdate}}</label>
+      <button ion-button #button1 (click) = "clickDeleteButton(button1, i)" color = "danger" item-right>Delete</button>
+    </ion-item>
+  </ion-list>
+</ion-card>
+
+<ion-card>
+  <button ion-button id = "button2" (click) = "onClickManage()" item-left>Manage Project</button>
+  <button ion-button id = "button2" (click) = "onClickReport()" item-right>Report</button>
+</ion-card>

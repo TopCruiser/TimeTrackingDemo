@@ -1,0 +1,39 @@
+<ion-navbar>
+  <ion-title>
+    Project Details
+  </ion-title>
+</ion-navbar>
+
+<ion-card>
+  <ion-list ng-controller="MyCtrl" can-swipe="listCanSwipe" >
+
+    <ion-item>
+      <ion-input type="text" placeholder = "key_project_id" value="key" [(ngModel)] = "key" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder = "Project Name" value = "name" [(ngModel)] = "name" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder = "info_currently_active" value = "info" [(ngModel)] = "info" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label item-left>Active</ion-label>
+      <ion-checkbox color="dark" [checked]="checkState1" (click) = "onCheck()"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label item-left>Disable</ion-label>
+      <ion-checkbox color="dark" [checked]="checkState2" (click) = "onCheck()"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button id = "button" color = "secondary" (click) = "onDone()" item-left>Done</button>
+      <button ion-button id = "button" color = "secondary" (click) = "onNew()" item-right>New</button>
+    </ion-item>
+
+  </ion-list>
+</ion-card>
+
